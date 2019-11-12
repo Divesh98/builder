@@ -17,7 +17,7 @@ const routes :Routes = [
         path:"editor",component:EditorComponent,canActivate:[AuthGuard]
     },
     {
-        path:"**",component:PageNotFoundComponent
+        path:"**",redirectTo:'dashboard',pathMatch:'full'
     }
 ]
 
