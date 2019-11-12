@@ -1,0 +1,18 @@
+<div class="midcontent">
+          <div class="qns-slider-nav color-dark">
+          
+       <div class="title" [froalaEditor]="Question1" ></div>
+       <div class="margin" *ngFor="let field of allmultioption;let d = index">
+          <mat-checkbox (change)="onSelected1($event,field)"><span [froalaEditor]="checkboxbuton1(d)"></span></mat-checkbox> <i (click)="removeoption1(d)" class="fa fa-times" *ngIf="d!=0 && d!=1"  ></i>
+      
+      </div><br>
+      <i class="fa fa-plus" (click)="addoption1()" >Add More Option</i>
+      <br>
+      <br>
+      <button class="button"color="primary"  background="primary" [froalaEditor]="mybuttonx1" mat-raised-button></button>
+        </div>
+     
+      
+      
+      </div>
+

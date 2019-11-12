@@ -1,0 +1,293 @@
+/* @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,700');
+[contenteditable]:focus {
+    outline: 0px solid transparent;
+}
+.mat-horizontal-stepper-header-container{display: none}
+.px14
+{
+    font-size: 14px;
+color:#000;
+}
+.plusicon
+{
+    position: absolute;
+    left: 50%;
+    margin-top:-30px;
+}
+.plusiconx
+{
+    position: absolute;
+    left:5.2%;
+ 
+}
+body
+{
+    background: #2e9ce6;
+    padding: 3em;
+    font-family: 'Raleway','Arial';
+    color:#fff;
+}
+.qns-slider-nav
+{
+    width: 90%;
+    padding: 10px;
+    animation-name: opacity-1;
+    padding: 30px 40px;
+    -webkit-box-shadow: 20px 20px 40px 7px rgba(0,0,0,.3);
+box-shadow: 20px 20px 40px 7px rgba(0,0,0,.3);
+border: 1px solid #f1f3f3;
+border-radius: 4px;
+min-height: 400px;
+     
+ 
+}
+.foricon
+{
+    position: absolute;
+    left: 50%;
+}
+.px18
+{
+    font-size: 18px;
+    color: #000;
+    font-weight: bold;
+}
+
+.qns-work-section h3{color:#000;font-family: 'Raleway','Arial';font-weight: 300;}
+
+.qns_input_cl:focus
+{
+    border: 2px solid #174A68;
+}
+.addcompo
+{
+    border: 2px solid;
+    padding: 5px;
+    margin: 0px auto;
+}
+.moveclosesign
+{
+   right: 10%;
+    position: absolute;
+  cursor: pointer;
+}
+.sbmt_button_for_qns_slide{
+    background: #3A5771;
+    color: #fff;
+    font-size: 18px;
+    box-shadow: 0 3px 5px 1px rgba(0,0,0,.2);
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    white-space: normal;
+    word-break: break-all;
+    padding: 5px;
+    height: 30px;
+    float: right;
+    position: absolute;
+   
+  float: left;
+    font-weight: bold;
+    font-size: 14px;
+ }
+
+.qns_input_cl
+{
+    border: 1px solid #d9dad3;
+    color: #666e78;
+    margin-bottom: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-shadow: 0 0 0 1px #f7f6f6;
+    box-shadow: 0 0 0 1px #f7f6f6;
+    background-color: transparent;
+    
+    border-radius: 0;
+    outline: 0;
+    width: 100%;
+    font-size: 16px;
+    margin: 0 0 15px;
+        margin-right: 0px;
+        margin-bottom: 15px;
+        margin-left: 0px;
+    padding: 16px 2%;
+        padding-right: 2%;
+        padding-left: 2%;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-shadow: 0 0 0 1px #f7f6f6;
+    box-shadow: 0 0 0 1px #f7f6f6;
+}
+ 
+a
+{
+    color:#fff;
+    text-decoration: none;
+
+}
+.first
+{
+    margin: 20px;
+} */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "../../frontend/node_modules/ngx-toastr/toastr.css";
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,700');
+[contenteditable]:focus {
+    outline: 0px solid transparent;
+}
+.mat-horizontal-stepper-header-container{display: none}
+.px14
+{
+    font-size: 14px;
+color:#000;
+font-weight: bold;
+}
+.plusicon
+{
+    position: absolute;
+    left: 50%;
+    margin-top:-30px;
+}
+.plusiconx
+{
+    position: absolute;
+    left:5.2%;
+    margin-top:-25px;
+ 
+}
+body
+{
+    background: rgba(0,0,0,.3);
+
+   
+    padding: 3em;
+    font-family: 'Raleway','Arial';
+    color:#fff;
+  
+}
+.qns-slider-nav
+{
+    width: 93%;
+     animation-name: opacity-1;
+     padding: 30px 40px;
+     -webkit-box-shadow: 20px 20px 20px 20px rgba(0,0,0,.3);
+ box-shadow: 10px 10px 10px 10px rgba(0,0,0,.3); 
+ border: 1px solid #f1f3f3;
+border-radius: 60px;
+min-height: 300px; 
+
+
+}
+.foricon
+{
+    position: absolute;
+    left: 50%;
+}
+.px18
+{
+    font-size: 18px;
+    color: #000;
+    font-weight: bold;
+}
+
+.qns-work-section h3{color:#000;font-family: 'Raleway','Arial';font-weight: 300;}
+
+.qns_input_cl:focus
+{
+    border: 2px solid #174A68;
+}
+.addcompo
+{
+    border: 2px solid;
+    padding: 1px;
+    margin: 2px; 
+    position: relative;
+    height:auto;
+}
+.moveclosesign
+{
+   right: 10%;
+    position: absolute;
+  cursor: pointer;
+}
+.sbmt_button_for_qns_slide{
+    background: #3A5771;
+    color: #fff;
+    font-size: 18px;
+    box-shadow: 0 3px 5px 1px rgba(0,0,0,.2);
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    white-space: normal;
+    word-break: break-all;
+    padding: 5px;
+    height: 30px;
+    float: right;
+    position: absolute;
+   
+  float: left;
+    font-weight: bold;
+    font-size: 14px;
+ }
+
+.qns_input_cl
+{
+    border: 1px solid #d9dad3;
+    color: #666e78;
+    margin-bottom: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-shadow: 0 0 0 1px #f7f6f6;
+    box-shadow: 0 0 0 1px #f7f6f6;
+    background-color: transparent;
+    
+    border-radius: 0;
+    outline: 0;
+    width: 100%;
+    font-size: 16px;
+    margin: 0 0 15px;
+        margin-right: 0px;
+        margin-bottom: 15px;
+        margin-left: 0px;
+    padding: 16px 2%;
+        padding-right: 2%;
+        padding-left: 2%;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-shadow: 0 0 0 1px #f7f6f6;
+    box-shadow: 0 0 0 1px #f7f6f6;
+}
+ 
+a
+{
+    color:#fff;
+    text-decoration: none;
+
+}
+.midcontent
+{
+    margin: 25px;
+    background-color: lightskyblue;;
+ 
+}
+.margin{
+    margin-top: 50px;
+    margin-left:60%;
+    box-sizing: border-box;
+  border: 1px solid #d9dad3;
+  border-width: 2px;
+  border-radius: 20px;
+  background-color: aqua
+}

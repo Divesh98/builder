@@ -1,0 +1,53 @@
+
+
+
+
+<div class="midcontent">
+    <div class="qns-slider-nav color-dark">
+        <img class="imglogo-padding" src=" https://cdn.filestackcontent.com/HJHzOXClQcao8ooZh8By" >
+      <div class="qns-work-section">
+  
+        <h1 class="heading"  [froalaEditor]="options"  ></h1>
+        <br>
+        <mat-menu #appMenuedit="matMenu">
+            <button mat-menu-item (click)="editfield(d,'first_name')">First Name</button>
+            <button mat-menu-item (click)="editfield(d,'last_name')">Last Name</button>
+            <button mat-menu-item (click)="editfield(d,'location')">Location</button>
+        </mat-menu>
+
+
+
+<form class="example-form" [formGroup]="myForm">
+    <div id="yoo" >
+      <mat-form-field>
+          <input matInput placeholder="Firstname" formControlName="first_name">        
+        </mat-form-field>
+        <!-- <button mat-icon-button [matMenuTriggerFor]="appMenuedit">
+            <i class="fa fa-edit">  </i> 
+          </button><i (click)="removefield(d)" class="fa fa-times"></i> -->
+      </div>
+      <div id="yoo1"> 
+         <mat-form-field>
+        <input matInput placeholder="LastName"formControlName="last_name">
+        
+      </mat-form-field>
+      <!-- <button mat-icon-button [matMenuTriggerFor]="appMenuedit">
+          <i class="fa fa-edit">  </i> 
+        </button><i (click)="removefield(d)" class="fa fa-times"></i> -->
+    </div>
+    <div id="yoo3" >
+        <mat-form-field>
+          <input matInput placeholder="Location"formControlName="location">
+          
+      
+        </mat-form-field>
+        <!-- <button mat-icon-button [matMenuTriggerFor]="appMenuedit">
+            <i class="fa fa-edit">  </i> 
+          </button><i (click)="removefield(d)" class="fa fa-times"></i> -->
+      </div>
+      <button class="button" mat-button color="primary"[disabled]="!myForm.valid"  (click)="onSubmit(myForm.value)"  [froalaEditor]="mybutton" mat-raised-button>Submit</button>
+
+  </form>
+     
+  </div>
+  

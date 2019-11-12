@@ -1,0 +1,76 @@
+
+
+<div class="button-row">
+    <button mat-button color="primary" class="mrgn" routerLink="/preview" mat-raised-button>
+   Preview</button>
+   <button mat-button color="primary" (click)="live(this.alldata.page)" mat-raised-button>Go Live</button></div> 
+<br><br>
+<div class="container">
+    
+   
+   <div *ngFor="let ngdatas of ngdata;let i=index">
+       <mat-menu #appMenu2="matMenu">
+           <button mat-menu-item (click)="editcomponent(i,'single_slider')">Single Select</button>
+           <button mat-menu-item (click)="editcomponent(i,'multi_select_field')">Multi Select</button>
+       
+           <button mat-menu-item (click)="editcomponent(i,'text_input_field')">Text Input</button>
+           <button mat-menu-item (click)="editcomponent(i,'file')">File Upload</button>
+  
+           
+       </mat-menu>
+       <div class="plusiconx" *ngIf="i!=0">
+           <button mat-icon-button [matMenuTriggerFor]="appMenu2">
+               <i class="fa fa-edit addcompo"></i>
+
+           </button>
+       </div>
+
+
+
+       
+       <i class="fa fa-times moveclosesign" *ngIf="i!=0" (click)="removecomponent(i)"></i>
+
+
+
+       <div *ngIf="ngdatas == 'text_input_field'">
+
+           <app-text-field [i]=i></app-text-field>
+       </div>
+     
+
+       <div *ngIf="ngdatas == 'single_slider'">
+
+           <app-single-slider [i]=i></app-single-slider>
+       </div>
+       <div *ngIf="ngdatas == 'multi_select_field'">
+
+           <app-multi-select-field [i]=i></app-multi-select-field>
+       </div>
+       <div *ngIf="ngdatas == 'file'">
+           <app-file-upload [i]=i></app-file-upload>
+       </div>
+       
+     
+       <mat-menu #appMenu="matMenu">
+           <button mat-menu-item (click)="addcomponent(i,'single_slider')">Single Select</button>
+           <button mat-menu-item (click)="addcomponent(i,'multi_select_field')">Multi Select</button>
+        
+           <button mat-menu-item (click)="addcomponent(i,'text_input_field')">Text Input</button>
+           <button mat-menu-item (click)="addcomponent(i,'file')">File Upload</button>
+      
+       </mat-menu>
+       <div class="plusicon" >
+           <button mat-icon-button [matMenuTriggerFor]="appMenu">
+               <i class="fa fa-plus addcompo"></i>
+
+           </button>
+       </div>
+
+   </div>
+
+
+
+</div>
+
+
+

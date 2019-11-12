@@ -1,0 +1,40 @@
+
+
+  <link href="../../../assets/css/sb-admin.css" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/css/style.css">   
+<div class="main">
+        <section class="sign-in">
+                <div class="container">
+                    <div class="signin-content">
+                        <div class="signin-image">
+                            <figure><img src="../../../assets/images/signin-image.jpg" alt="sing up image"></figure>
+                            <a routerLink="/signup" class="signup-image-link">Create an account</a>
+                        </div>
+            
+                        <div class="signin-form">
+                            <h2 class="form-title">Sign in</h2>
+                            <form (submit)="onLogin()" form [formGroup] ="loginForm"  role="form" class="form-horizontal" id="login-form">
+                                    <div class="form-group">
+                                            <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                            <input formControlName="email" type="text" name="email" id="email" class="form-control" placeholder="Email"/>
+                                            <span *ngIf="!loginForm.get('email').valid && loginForm.get('email').touched" class="spanValid"> Enter Your valid Email Address</span>
+                                        </div>
+                                <div class="form-group">
+                                    <label for="password"><i class="zmdi zmdi-lock"></i></label>
+                                    <input formControlName="password" class="form-control" type="password" name="password" id="password" placeholder="Password"/>
+                                    <span *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched" class="spanValid">Enter your Password</span>
+                                </div>
+                                <div style="margin-top:10px" class="form-group">
+                                    <div class="col-sm-12 controls">  
+                                         <button id="btn-signup"[disabled]="!loginForm.valid" type="submit" class="btn btn-primary"><i class="icon-hand-right"></i> Sign In</button>                                 
+                                       
+                                       </div>
+                                   </div>
+   
+                                                          </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+</div>

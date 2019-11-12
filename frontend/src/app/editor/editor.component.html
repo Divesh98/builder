@@ -1,0 +1,216 @@
+<!-- 
+<div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        1 of 2
+      </div>
+      <div class="col-md-6">
+        2 of 2
+      </div>
+   
+    </div>
+  </div> -->
+    
+  
+  <link href="../../../assets/css/sb-admin.css" rel="stylesheet">
+
+  <div class ="quiz">
+      <div class="container-fluid">
+          <div class="row">
+            <div class="col">
+              <h2>
+                Quiz Template
+              </h2>
+
+              
+            
+              </div>
+            <div class="col"><h2><b></b>
+              Editor
+              </h2>
+              
+                    
+                
+             </div>
+          </div>
+        
+          <div class="row">
+
+            <div class="col-md-6">
+             
+
+             
+            
+              <div class="editing2">
+                  <!-- <h2>{{questions}}</h2> -->
+              
+                  <div>
+                      <!-- <div *ngFor="let b of a.question;"> -->
+                    <!-- <h2>{{a.option}}</h2> -->
+     
+                   </div>
+                 
+                 
+                     <div *ngFor="let ques of testData;let i=index">
+                      
+                       <h2> {{ques.questions}}</h2>
+
+                       <div *ngFor="let opt of ques.Options; let ind=index">
+                         
+                         <h2> {{opt.option}}</h2>
+                       </div>
+                   </div>
+     
+                 <!-- </div>  -->
+                    <!-- <div *ngFor="let b of tempArray1">
+                     <h2>{{b.option}}</h2>
+                   </div>  -->
+                    <!-- <div *ngFor="let b of tempArray1">
+                     <h2>
+                       {{b.option}}
+                     </h2>
+                   </div>  -->
+
+              </div>
+              <div class="editing1">
+                  <div id="default">
+                      <h3>Enter the options here</h3>
+                    </div>
+      
+                    <!-- dropdown -->
+      
+                    <div id="dropDownId">
+                      <select class="dropDown">
+                        <option value="option1">option1</option>
+                        <option value="option2">option2</option>
+                        <option value="option3">option3</option>
+                      </select>
+      
+                      <!-- radio -->
+      
+                      <div id="singleSelectId">
+                        <div class="radio">
+                              
+                            <input type="radio"name="option" value="option1">option1
+                            <input type="radio"name="option" value="option2">option2
+                            <input type="radio"name="option" value="option3">option3
+      
+                        </div>
+                
+                      
+                      </div>
+      
+                      <!-- text area -->
+      
+                      <div id="textInput">
+                        <div class="textarea">
+                          <textarea  rows="2" id="text" placeholder="Enter..."></textarea>
+      
+                        </div>
+                        
+                      </div>
+      
+                      <!-- check box -->
+                      <div id="checkbox">
+                      <div class="checkbox">
+                        <input type="checkbox" name="option"  value="checkbox1">option 1
+                        <input type="checkbox" name="option"  value="checkbox2">option 2
+                        <input type="checkbox" name="option"  value="checkbox3">option 3
+                        <input type="checkbox" name="option"  value="checkbox4">option 4
+                      </div>
+                    </div>
+                      
+                      
+                    </div>
+
+              </div>
+
+              
+              
+             
+            </div>
+
+            <div class="col"> 
+              <div class="form">
+
+              <form [formGroup]="nestedForm" >
+                  
+                <div formArrayName="question">
+                  <div *ngFor="let group of nestedForm.get('question').controls; let i =index;"
+                  [formGroupName]="i">
+                  <h4>Question {{i+1}}</h4>
+                  <div >
+
+                <div>
+                  <input type="text"class="drop-down"  formControlName="questions"  placeholder="Enter the Questions" ><br>
+                  <span *ngIf="group.get('questions').touched && group.get('questions').invalid" class="spanValid">Enter your Questions</span>
+                </div>
+                
+                  
+                <button type="button" class="btn-info"(click)="addOption(group)">Add Options</button>
+
+                    <select class="btn-info"  (change)="getOptionId($event)">
+                        <option value="dropdown">Dropdown</option>
+                        <option value="singleSelect">Single Select</option>
+                        <option value="textinput">Text Input</option>
+                        <option value="multiSelect">Multi Select</option>
+                    </select>
+  
+
+
+                <br><br>
+
+              
+                
+
+                <div formArrayName="Options">
+                  <div *ngFor="let option of group.get('Options').controls;let OptIndex=index;"
+                  [formGroupName]="OptIndex">
+                  
+                  <h4>Option {{OptIndex+1}}</h4>
+
+                  <input type="text"class="drop-down"  formControlName="option" placeholder="Enter the Options">
+
+                  <span *ngIf="option.get('option').touched && option.get('option').invalid" class="spanValid">Enter your Options Name</span>
+            
+                  
+                  <input type="text"class="drop-down" formControlName="isAnswer" placeholder="True/False">
+                  <span *ngIf="option.get('isAnswer').touched && option.get('isAnswer').invalid" class="spanValid">Enter your Options</span>
+                  <br>
+                  <button type="button" class="btn-info"(click)="deleteOption(group,OptIndex)">Delete</button>       
+
+                </div>
+                    
+                  
+
+
+          </div>
+        </div>
+                </div>
+              </div>
+              <br>
+
+              <button type="button" id="yoo" class="btn btn-success" (click)="addQuestion()">ADD</button>
+
+              <button type="button" id="yoo"class="btn btn-success"(click)="removeQuestion(i)">Remove</button>
+              <br>
+              <br>
+            
+                  <button type="submit" id="yoo" (click)="submitHandler(nestedForm.value)" class="btn btn-primary"[disabled]="nestedForm.get('question').invalid" >Save</button><br><br>
+                
+                
+                  </form>
+              
+
+                 
+
+                </div>
+              
+                  
+              </div>
+            </div>
+          
+          </div>
+         
+        </div>
+  

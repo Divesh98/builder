@@ -1,0 +1,18 @@
+<div class="midcontent">
+    <div class="qns-slider-nav color-dark">
+        <img class="imglogo-padding" src=" https://cdn.filestackcontent.com/HJHzOXClQcao8ooZh8By" >
+        <div class="qns-work-section">
+            <h1 class="title"  [froalaEditor]="options"></h1>
+            <form class="example-form">
+                <ul class="list-inline rating-list" 
+                *ngFor="let star of stars" style="display: inline-block" >
+                  <li (click)="countStar(star)"
+                      [ngClass]="{'selected': (star <= selectedValue)}">
+                    <i class="fa fa-star"></i>
+                  </li> 
+            </ul>
+            <button class="button" color="primary"  background="primary" [froalaEditor]="mybuttonx"  mat-raised-button>Submit</button>
+            </form>
+        </div>
+    </div>
+  </div>

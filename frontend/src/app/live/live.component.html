@@ -1,0 +1,72 @@
+ 
+
+<div class="button-row">
+    <button (click)="onlogout()" mat-button color="primary" class="mrgn" routerLink="/login" mat-raised-button>
+      Logout</button>
+  </div>
+ 
+  <!-- <div class="link">
+    <mat-form-field>
+        <input matInput  value={{liveValue}}   #userinput >
+  
+    </mat-form-field>
+    <button (click)="copyMessage(userinput)"value="click to copy" mat-button color="primary"  mat-raised-button>Copy</button>
+        <br><br>
+</div> -->
+<div class="midcontent">
+  <div class="qns-slider-nav color-dark">
+  
+          <mat-horizontal-stepper [linear]="isLinear" #stepper>
+
+            <mat-step *ngFor="let data of ngdata;let i=index" [stepControl]="firstFormGroup">
+              <form [formGroup]="firstFormGroup">
+                  <img class="imglogo-padding" src=" https://cdn.filestackcontent.com/HJHzOXClQcao8ooZh8By" >
+               
+                  <div *ngIf="data=='text_input_field'">
+                      <h1  [innerHTML]="titles[i]"></h1>
+                      <mat-form-field >
+                      <input matInput required disabled  >{{isAnswer[i]}}
+                    </mat-form-field><br><br>
+                    <button color="primary" matStepperNext  background="primary" mat-raised-button>{{sbmtbtn[i]}}</button>
+
+                    </div>
+                    <div *ngIf="data=='multi_select_field'">
+                        <h1  [innerHTML]="titles[i]"></h1>
+                        
+                        <div class="margin1"*ngFor="let mul of multi_opanion(i);let l=index">
+
+                            <mat-checkbox> {{mul}}</mat-checkbox>
+                           
+                        </div>
+                        <br><br>
+                        <button color="primary" matStepperNext  background="primary" mat-raised-button>{{sbmtbtn[i]}}</button>
+                      </div>
+                  
+                        <div *ngIf="data=='single_slider'">
+                            <h1  [innerHTML]="titles[i]"></h1>
+                            <mat-radio-group>
+                        <div class="margin1" *ngFor="let mul of multi_opanion(i);let i=index">
+                           
+                          <mat-radio-button [checked]="go(i)" [value]="i" ><span>{{mul}}</span> </mat-radio-button>
+                           
+                        </div></mat-radio-group>
+                        <br><br>
+                        <button color="primary" matStepperNext  background="primary" mat-raised-button>{{sbmtbtn[i]}}</button>
+                          </div>
+                          <div *ngIf="data==='file'">
+                            <h1  [innerHTML]="titles[i]"></h1>
+                          <img class="img" [src]="image_logo[i]">
+                        </div>
+
+             
+                <div>
+                    <button *ngIf="i!=0" mat-button matStepperPrevious>Back <i class="fa fa-reply"></i></button>
+                  <button class="nextforslider" mat-button matStepperNext>Next <i class="fa fa-share"></i></button>
+                </div>
+              </form>
+            </mat-step>
+            
+          </mat-horizontal-stepper> 
+          </div>
+          </div>
+    

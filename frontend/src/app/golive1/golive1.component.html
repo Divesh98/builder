@@ -1,0 +1,96 @@
+<div class="button-row"><button mat-button color="primary" routerLink="/next1" mat-raised-button>Builder</button></div> 
+      <br><br>
+     <div class="midcontent">
+      
+         <div class="qns-slider-nav color-dark">
+           
+             <mat-horizontal-stepper [linear]="isLinear" #stepper>
+
+   
+                 <mat-step *ngFor="let data of ngdata;let i=index" [stepControl]="firstFormGroup">
+                   <form >
+                       <img class="imglogo-padding" src=" https://cdn.filestackcontent.com/HJHzOXClQcao8ooZh8By" >
+                       <div *ngIf="data =='first_page'">
+                          <br>
+                          <h1  [innerHTML]="titles[i]"></h1>
+                          <div >
+                              <mat-form-field>
+                                  <input matInput placeholder="Firstname" disabled >{{first_name[i]}}     
+                                </mat-form-field>
+                              </div>
+                              <div> 
+                                 <mat-form-field>
+                                <input matInput placeholder="LastName" disabled>{{last_name[i]}}
+                                
+                              </mat-form-field>
+                            </div>
+                            <div >
+                                <mat-form-field>
+                                  <input matInput placeholder="Location" disabled>{{location[i]}}
+                              
+                                </mat-form-field>
+                              </div>
+                            <div class="clear"></div>
+                               
+                            <button mat-button color="primary"  mat-raised-button>{{sbmtbtn[i]}}</button>
+                           
+
+                       </div>
+                       <div *ngIf="data=='text_input_field'">
+                          <h1  [innerHTML]="titles[i]"></h1>
+                          <mat-form-field >
+                          <input matInput required   disabled>{{isAnswer[i]}}
+                        </mat-form-field><br><br>
+                          <button color="primary" matStepperNext  background="primary" mat-raised-button>{{sbmtbtn[i]}}</button>
+                          
+    
+                        </div>
+                        <div class="margin1" *ngIf="data=='multi_select_field'">
+                            <h1  [innerHTML]="titles[i]"></h1>
+                            
+                            <div *ngFor="let mul of multi_opanion(i);let l=index">
+  
+                                <mat-checkbox> {{mul}}</mat-checkbox>
+                            </div>
+                            <br>
+                            <button color="primary" matStepperNext  background="primary" mat-raised-button>{{sbmtbtn[i]}}</button>
+                          </div>
+                     
+                            <div class="margin1" *ngIf="data=='single_slider'">
+                                <h1  [innerHTML]="titles[i]"></h1>
+                                <mat-radio-group>
+                            <div class="margin1" *ngFor="let mul of multi_opanion(i);let i=index">
+                               
+                              <mat-radio-button [checked]="go(i)" [value]="i"><span>{{mul}}</span> </mat-radio-button>
+                               
+                            </div></mat-radio-group>
+                            <br>
+                            <button color="primary" matStepperNext  background="primary" mat-raised-button>{{sbmtbtn[i]}}</button>
+                              </div>
+                              <div *ngIf="data=='rating_field'">
+                                  <h1  [innerHTML]="titles[i]"></h1>
+                                  <form class="example-form">
+                                    <ul class="list-inline rating-list" 
+                                    *ngFor="let star of stars" style="display: inline-block" >
+                                      <li 
+                                          [ngClass]="{'selected': (star <= this.starrating)}">
+                                        <i class="fa fa-star"></i>
+                                      </li> 
+                                </ul>
+                                  <button class="button" color="primary"  background="primary" mat-raised-button>{{sbmtbtn[i]}}</button>
+                                  </form>
+                                </div>
+                 
+                    <div>
+                      <br>
+                        <button *ngIf="i!=0" mat-button matStepperPrevious>Back <i class="fa fa-reply"></i></button>
+                      <button class="nextforslider" mat-button matStepperNext>Next <i class="fa fa-share"></i></button>
+                    </div>
+                  </form>
+                </mat-step>
+                
+              </mat-horizontal-stepper> 
+        </div>
+      </div>
+
+
